@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>درباره ما و تماس | جواهری قسمتی</title>
+<meta name="description" content="جواهری قسمتی، رشت، منظریه، جنب هتل پردیس. ساعت کاری، تلفن، اینستاگرام و مسیریابی.">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="about">
+<div data-header></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">خانه</a><span>/</span><span>درباره ما و تماس</span></div>
+      <h1 class="display h-xl">درباره جواهری قسمتی</h1>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="about-intro">
+        <div class="fade">
+          <svg class="ornament" aria-hidden="true"><use href="#i-orn"/></svg>
+          <p class="quote">از سال <span data-bind="since"></span>، طلا و جواهر در رشت.</p>
+          <div data-story style="margin-top:26px"></div>
+        </div>
+        <div class="media reveal" style="aspect-ratio:4/5;overflow:hidden"><img src="images/editorial/craft.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+      </div>
+      <div class="facts">
+        <div class="fade"><b data-bind="since"></b><span>سال تأسیس</span></div>
+        <div class="fade"><b data-cat-count></b><span>دسته کالا، از مدال تا ساعت</span></div>
+        <div class="fade"><b>رشت</b><span>منظریه، جنب هتل پردیس</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="visit-grid">
+        <div class="media reveal"><img src="images/editorial/store.jpg" alt=""></div>
+        <div class="copy">
+          <h2 class="display h-md" id="visit-title">سر بزنید یا پیام بدهید</h2>
+          <div class="hours">
+            <div><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-bind="address"></span></div>
+            <div><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-bind="hours"></span></div>
+            <div><svg aria-hidden="true"><use href="#i-phone"/></svg><a data-href="tel" data-bind="phoneDisplay"></a></div>
+          </div>
+          <div class="cta-col" style="max-width:340px">
+            <a class="btn solid" data-href="map" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg> مسیریابی روی نقشه</a>
+            <a class="btn" data-href="dm" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg> پیام در اینستاگرام</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-footer></div>
+
+<script src="data.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(() => {
+  const { S, CATS, esc, $ } = window.GJ;
+  const story = (S.story && S.story.length) ? S.story : [];
+  $('[data-story]').innerHTML = story.map(p => `<p class="lede" style="margin-bottom:14px">${esc(p)}</p>`).join('');
+  $('[data-cat-count]').textContent = CATS.length.toLocaleString('fa-IR');
+})();
+</script>
+</body>
+</html>

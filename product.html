@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جواهری قسمتی</title>
+<meta name="theme-color" content="#FAF6EE">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="product">
+<div data-header></div>
+
+<main id="main" class="product">
+  <div class="wrap" data-product></div>
+  <section class="block" style="padding-bottom:0" data-rail>
+    <div class="wrap">
+      <div class="block-head">
+        <h2 class="display h-md" data-related-title>شاید این‌ها را هم بپسندید</h2>
+        <div class="rail-controls">
+          <button class="round-btn" data-prev aria-label="قبلی"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+          <button class="round-btn" data-next aria-label="بعدی"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" data-related></div>
+    </div>
+  </section>
+</main>
+
+<div data-footer></div>
+
+<script src="data.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(() => {
+  const { PRODUCTS, USED, CATS, card, esc, links, catName, $, $$ } = window.GJ;
+  const q = new URLSearchParams(location.search);
+  const isUsed = q.has('u');
+  const idx = parseInt(q.get(isUsed ? 'u' : 'p'), 10);
+  const list = isUsed ? USED : PRODUCTS;
+  const p = list[idx];
+  const root = $('[data-product]');
+
+  if (!p) {
+    root.innerHTML = `<div class="empty"><h1 class="display h-md">این قطعه پیدا نشد</h1><p>ممکن است از سایت برداشته شده باشد.</p><p><a class="btn" href="collection.html">برگشت به کلکسیون</a></p></div>`;
+    $('[data-related-title]').closest('section').remove();
+    return;
+  }
+
+  const images = (Array.isArray(p.images) && p.images.length ? p.images : [p.image]).filter(Boolean);
+  const kind = isUsed ? `دست دوم${p.type ? '، ' + p.type : ''}` : catName(p.category);
+  const parentHref = isUsed ? 'secondhand.html' : links.collection(p.category);
+  const parentName = isUsed ? 'طلای دست دوم' : (catName(p.category) || 'کلکسیون');
+  document.title = `${p.name} | جواهری قسمتی`;
+
+  const rows = [];
+  if (p.karat) rows.push(['عیار', p.karat]);
+  if (p.weight) rows.push(['وزن', p.weight + ' گرم']);
+  if (p.condition) rows.push(['وضعیت', p.condition]);
+  if (p.note) rows.push(['توضیح', p.note]);
+  rows.push(['قیمت', 'بر اساس نرخ روز طلا']);
+
+  root.innerHTML = `
+    <div class="crumbs"><a href="index.html">خانه</a><span>/</span><a href="${parentHref}">${esc(parentName)}</a><span>/</span><span>${esc(p.name)}</span></div>
+    <div class="product-grid">
+      <div class="gallery${images.length < 2 ? ' single' : ''}">
+        <div class="thumbs">${images.map((src, i) => `<button aria-label="تصویر ${i + 1}" aria-current="${i === 0}" data-img="${esc(src)}"><img src="${esc(src)}" alt=""></button>`).join('')}</div>
+        <div class="zoom" data-zoom><img src="${esc(images[0])}" alt="${esc(p.name)}"></div>
+      </div>
+      <div class="info-panel">
+        <span class="kind">${esc(kind)}</span>
+        <h1 class="display h-lg">${esc(p.name)}</h1>
+        ${p.sold ? '<div class="sold-note">این قطعه فروخته شده است. برای قطعه‌های مشابه پیام بدهید.</div>' : ''}
+        <dl class="spec">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+        <div class="price-note"><b>قیمت امروز را بپرسید.</b> قیمت طلا هر روز تغییر می‌کند؛ با یک پیام یا تماس، قیمت دقیق همین قطعه را می‌گوییم.</div>
+        <div class="cta-col">
+          <a class="btn solid" href="${links.dm}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg> ${p.sold ? 'پرسیدن قطعه مشابه' : 'پرسیدن قیمت در اینستاگرام'}</a>
+          <a class="btn" href="${links.tel}"><svg aria-hidden="true"><use href="#i-phone"/></svg> تماس با مغازه</a>
+        </div>
+        ${p.description ? `<p class="desc">${esc(p.description)}</p>` : ''}
+      </div>
+    </div>`;
+
+  // thumbnails
+  root.addEventListener('click', e => {
+    const b = e.target.closest('[data-img]'); if (!b) return;
+    $('[data-zoom] img', root).src = b.dataset.img;
+    $$('[data-img]', root).forEach(x => x.setAttribute('aria-current', String(x === b)));
+  });
+  // hover zoom that follows the pointer (desktop)
+  const zoom = $('[data-zoom]', root), zimg = $('img', zoom);
+  zoom.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') zoom.classList.add('on'); });
+  zoom.addEventListener('pointerleave', () => zoom.classList.remove('on'));
+  zoom.addEventListener('pointermove', e => {
+    const r = zoom.getBoundingClientRect();
+    zimg.style.transformOrigin = `${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`;
+  });
+  zoom.addEventListener('click', () => zoom.classList.toggle('on'));
+
+  // related
+  const related = list.map((x, i) => [x, i])
+    .filter(([x, i]) => i !== idx && (isUsed ? true : x.category === p.category))
+    .concat(isUsed ? [] : list.map((x, i) => [x, i]).filter(([x, i]) => i !== idx && x.category !== p.category))
+    .slice(0, 8);
+  $('[data-related]').innerHTML = related.map(([x, i]) => card(x, i, isUsed ? 'u' : 'p')).join('');
+})();
+</script>
+</body>
+</html>

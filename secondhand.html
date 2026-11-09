@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طلای دست دوم | جواهری قسمتی</title>
+<meta name="description" content="گالری طلای دست دوم جواهری قسمتی در رشت. از هر قطعه فقط یکی هست.">
+<meta name="theme-color" content="#15100C">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .used-hero { position: relative; min-height: 64vh; display: flex; align-items: flex-end; color: var(--on-velvet); background: var(--velvet); overflow: hidden; }
+  .used-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+  .used-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, var(--velvet), transparent 70%); }
+  .used-hero .wrap { position: relative; z-index: 1; padding-bottom: 64px; width: 100%; }
+  .used-hero .crumbs { font-size: 13px; color: var(--on-velvet-soft); margin-bottom: 16px; display: flex; gap: 10px; }
+  .used-hero .lede { color: var(--on-velvet-soft); margin-top: 16px; }
+  .note-strip { display: flex; gap: 40px; flex-wrap: wrap; padding: 26px 0; border-bottom: 1px solid var(--line); margin-bottom: 40px; color: var(--ink-soft); font-size: 15px; }
+  .note-strip b { color: var(--ink); font-weight: 500; }
+</style>
+</head>
+<body class="dark-top" data-page="secondhand">
+<div data-header></div>
+
+<main id="main">
+  <section class="used-hero">
+    <img src="images/editorial/used-banner.jpg" alt="">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">خانه</a><span>/</span><span>طلای دست دوم</span></div>
+      <h1 class="display h-xl">طلای دست دوم</h1>
+      <p class="lede">از هر کدام فقط یکی هست و ممکن است زود فروخته شود. پیش از آمدن، موجود بودنش را بپرسید.</p>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="note-strip">
+        <span><b>تک‌قطعه</b>، از هر مدل فقط یکی</span>
+        <span><b>نرخ روز</b>، قیمت با نرخ امروز طلا حساب می‌شود</span>
+      </div>
+      <div class="filters" role="group" aria-label="نوع قطعه" data-filters></div>
+      <p class="count" data-count aria-live="polite"></p>
+      <div class="grid" data-grid></div>
+    </div>
+  </section>
+</main>
+
+<div data-footer></div>
+
+<script src="data.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(() => {
+  const { USED, card, esc, $, $$ } = window.GJ;
+  const types = [...new Set(USED.map(u => u.type).filter(Boolean))];
+  let current = 'all';
+  const filters = $('[data-filters]');
+  filters.innerHTML = [['all', 'همه'], ...types.map(t => [t, t])]
+    .map(([id, name]) => `<button data-t="${esc(id)}" aria-pressed="${id === current}">${esc(name)}</button>`).join('');
+  function render() {
+    // available pieces first, sold ones at the end
+    const list = USED.map((u, i) => [u, i]).filter(([u]) => current === 'all' || u.type === current)
+      .sort((a, b) => (a[0].sold ? 1 : 0) - (b[0].sold ? 1 : 0));
+    const available = list.filter(([u]) => !u.sold).length;
+    $('[data-count]').textContent = `${available.toLocaleString('fa-IR')} قطعه موجود`;
+    $('[data-grid]').innerHTML = list.length
+      ? list.map(([u, i]) => card(u, i, 'u')).join('')
+      : `<p class="empty" style="grid-column:1/-1">فعلاً قطعه‌ای از این نوع نداریم.</p>`;
+  }
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('[data-t]'); if (!b) return;
+    current = b.dataset.t;
+    $$('[data-t]', filters).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

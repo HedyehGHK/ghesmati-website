@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کلکسیون | جواهری قسمتی</title>
+<meta name="description" content="کلکسیون طلا، جواهر و ساعت جواهری قسمتی در رشت: مدال، گردنی، زنجیر، گوشواره، دستبند، انگشتر و ساعت.">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="collection">
+<div data-header></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">خانه</a><span>/</span><span>کلکسیون</span></div>
+      <h1 class="display h-xl" data-title>کلکسیون</h1>
+      <p class="lede">قیمت هر قطعه با نرخ روز طلا حساب می‌شود. برای قیمت امروز در اینستاگرام پیام بدهید یا تماس بگیرید.</p>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:56px">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="دسته‌بندی" data-filters></div>
+      <p class="count" data-count aria-live="polite"></p>
+      <div class="grid" data-grid></div>
+    </div>
+  </section>
+</main>
+
+<div data-footer></div>
+
+<script src="data.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(() => {
+  const { CATS, PRODUCTS, card, esc, $, $$ } = window.GJ;
+  const params = new URLSearchParams(location.search);
+  let current = params.get('c') || 'all';
+  const filters = $('[data-filters]');
+  filters.innerHTML = [['all', 'همه'], ...CATS.map(c => [c.id, c.name])]
+    .map(([id, name]) => `<button data-c="${esc(id)}" aria-pressed="${id === current}">${esc(name)}</button>`).join('');
+
+  function render() {
+    const list = PRODUCTS.map((p, i) => [p, i]).filter(([p]) => current === 'all' || p.category === current);
+    const cat = CATS.find(c => c.id === current);
+    $('[data-title]').textContent = cat ? cat.name : 'کلکسیون';
+    document.title = (cat ? cat.name + ' | ' : 'کلکسیون | ') + 'جواهری قسمتی';
+    $('[data-count]').textContent = list.length ? `${list.length.toLocaleString('fa-IR')} قطعه` : '';
+    $('[data-grid]').innerHTML = list.length
+      ? list.map(([p, i]) => card(p, i, 'p')).join('')
+      : `<p class="empty" style="grid-column:1/-1">فعلاً قطعه‌ای از این دسته روی سایت نیست. در اینستاگرام بپرسید؛ شاید در مغازه باشد.</p>`;
+  }
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('[data-c]'); if (!b) return;
+    current = b.dataset.c;
+    $$('[data-c]', filters).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    history.replaceState(null, '', current === 'all' ? 'collection.html' : `collection.html?c=${encodeURIComponent(current)}`);
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

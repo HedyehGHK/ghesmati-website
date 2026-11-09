@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جواهری قسمتی | طلا، جواهر و ساعت در رشت</title>
+<meta name="description" content="جواهری قسمتی، رشت، منظریه، جنب هتل پردیس. طلا، جواهر و ساعت از سال ۱۳۹۰. ویترین کالاهای نو و گالری طلای دست دوم.">
+<meta name="theme-color" content="#F4ECDC">
+<style>
+/* ---------- Fonts (bundled locally: no internet or CDN needed) ---------- */
+@font-face { font-family: 'Markazi'; src: url('fonts/markazi-text-variable.woff2') format('woff2'); font-weight: 400 700; font-display: swap; }
+
+/* ---------- Tokens ---------- */
+:root {
+  --lapis: #123A2E;
+  --night: #0A231B;
+  --gold: #C9A04E;
+  --gold-light: #EBD08E;
+  --gold-deep: #8C6420;
+  --parchment: #EEE4CE;
+  --parchment-deep: #E2D4B5;
+  --ink: #3A2617;
+  --firouzeh: #3AA6A0;
+  --sold: #9E2B25;
+  --text-on-lapis: #E9E2D2;
+  --muted-on-lapis: #A8BBAE;
+  --serif: 'Markazi', 'Times New Roman', serif;
+  --wrap: 1180px;
+  --arch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100V38C0 18 28 9 50 0 72 9 100 18 100 38V100Z'/%3E%3C/svg%3E");
+  --girih: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23C9A04E' stroke-width='.8'%3E%3Cpath d='M42 12l8.5 21.5L72 42l-21.5 8.5L42 72l-8.5-21.5L12 42l21.5-8.5z'/%3E%3Cpath d='M42 21l12 9 9 12-9 12-12 9-12-9-9-12 9-12z'/%3E%3Cpath d='M0 0l12 12M84 0L72 12M0 84l12-12M84 84L72 72'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--night); color: var(--text-on-lapis);
+  font-family: var(--serif); font-size: 21px; line-height: 1.75; font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--firouzeh); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+.skip { position: absolute; inset-inline-start: 12px; top: -60px; background: var(--gold); color: var(--night); padding: 8px 14px; z-index: 50; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--night) 82%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 160, 78, .18);
+}
+.site-header .wrap { display: flex; align-items: center; gap: 28px; height: 74px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { height: 52px; width: 52px; border-radius: 50%; object-fit: cover; }
+.nav { display: flex; gap: 26px; margin-inline-start: auto; }
+.nav a { text-decoration: none; font-size: 19px; color: var(--muted-on-lapis); transition: color .2s; }
+.nav a:hover { color: var(--gold-light); }
+.call {
+  text-decoration: none; border: 1px solid var(--gold); color: var(--gold-light);
+  padding: 4px 16px; border-radius: 999px; font-size: 18px; white-space: nowrap; transition: background .2s, color .2s;
+}
+.call:hover { background: var(--gold); color: var(--night); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 70% at 70% 45%, rgba(46, 120, 92, .42), transparent 70%),
+    var(--girih) center / 84px 84px,
+    linear-gradient(180deg, var(--night), var(--lapis));
+  background-blend-mode: normal, soft-light, normal;
+}
+.hero::after { /* fade girih toward edges */
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 60% 40%, transparent 30%, var(--night) 95%);
+  opacity: .75;
+}
+.hero .wrap {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1.35fr .9fr; align-items: center; gap: 48px;
+  min-height: min(860px, calc(100svh - 74px)); padding-top: 40px; padding-bottom: 56px;
+}
+.toranj-panel { position: relative; display: grid; place-items: center; text-align: center; aspect-ratio: 1.6; }
+.toranj { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.toranj path, .toranj circle { fill: none; stroke: var(--gold); vector-effect: non-scaling-stroke; }
+.toranj .outer { stroke-width: 1.6; }
+.toranj .inner { stroke-width: .8; opacity: .55; }
+.toranj .bead { fill: var(--gold); stroke: none; }
+.toranj .fill { fill: rgba(10, 35, 27, .55); stroke: none; }
+.draw { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.js .draw { stroke-dashoffset: 1; animation: draw 2.2s cubic-bezier(.6, .1, .3, 1) forwards; }
+.js .draw.late { animation-delay: .5s; animation-duration: 1.8s; }
+.js .bead { opacity: 0; animation: fade .6s ease forwards 1.9s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade { to { opacity: 1; } }
+
+.calligraphy { position: relative; z-index: 1; padding: 0 8%; }
+.calligraphy h1 { margin: 0; line-height: 0; }
+.calli-svg { display: block; width: clamp(260px, 29vw, 440px); aspect-ratio: 3958 / 2045; margin: 0 auto; overflow: visible; filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .35)); }
+.js .calli-svg { opacity: 0; animation: fade 1s ease forwards .9s; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.brand-svg { display: block; height: 40px; aspect-ratio: 3958 / 2045; fill: var(--gold-light); overflow: visible; }
+.since { margin: 14px 0 0; font-size: 19px; color: var(--gold-light); opacity: .85; }
+.js .since { opacity: 0; animation: fade .8s ease forwards 2.2s; }
+
+.hero-text { margin-top: 10px; text-align: center; }
+.hero-text p { margin: 0 auto; max-width: 30em; }
+.hero-text .lead { font-size: clamp(24px, 2.6vw, 31px); font-weight: 500; color: #F6EFDF; }
+.hero-text .where { color: var(--muted-on-lapis); font-size: 19px; margin-top: 4px; }
+.hero-text .where span { white-space: nowrap; }
+.actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;
+  padding: 10px 26px; font-size: 20px; border-radius: 999px; border: 1px solid transparent; transition: transform .2s, background .2s, color .2s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold) 60%, var(--gold-deep)); color: var(--night); font-weight: 700; }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-line { border-color: rgba(235, 208, 142, .55); color: var(--gold-light); }
+.btn-line:hover { background: rgba(235, 208, 142, .1); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+.hero-photo { position: relative; justify-self: center; width: min(100%, 420px); }
+.arch-frame { position: relative; aspect-ratio: 4 / 5.2; }
+.arch-frame img, .arch-frame .ph {
+  width: 100%; height: 100%; object-fit: cover;
+  -webkit-mask: var(--arch) center / 100% 100% no-repeat; mask: var(--arch) center / 100% 100% no-repeat;
+}
+.arch-line { position: absolute; inset: -10px; width: calc(100% + 20px); height: calc(100% + 20px); pointer-events: none; overflow: visible; }
+.arch-line path { fill: none; stroke: var(--gold); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.js .hero-photo img { clip-path: inset(100% 0 0 0); animation: rise 1.4s cubic-bezier(.7, 0, .2, 1) forwards .4s; }
+@keyframes rise { to { clip-path: inset(0 0 0 0); } }
+
+/* ---------- Section heads ---------- */
+section { scroll-margin-top: 80px; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 30px; }
+.section-head h2 { margin: 0; font-size: clamp(40px, 4.6vw, 58px); line-height: 1.2; font-weight: 700; }
+.section-head p { margin: 0; max-width: 34em; color: var(--muted-on-lapis); font-size: 20px; }
+
+/* ---------- Collections + vitrine ---------- */
+.vitrine { background: var(--lapis); padding: 96px 0 110px; position: relative; }
+.vitrine h2 { color: #F6EFDF; }
+.cats { display: flex; gap: 22px; overflow-x: auto; padding: 6px 4px 18px; margin: 0 -4px 34px; scrollbar-width: thin; scrollbar-color: var(--gold-deep) transparent; }
+.cat {
+  flex: 0 0 auto; width: 112px; border: 0; background: none; padding: 0; cursor: pointer; text-align: center;
+  color: var(--muted-on-lapis); font-size: 18px; transition: color .2s;
+}
+.cat .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 10px; }
+.cat .arch-frame img { transition: transform .5s ease, filter .3s; filter: saturate(.85) brightness(.85); }
+.cat .arch-line { inset: -6px; width: calc(100% + 12px); height: calc(100% + 12px); }
+.cat .arch-line path { stroke: rgba(201, 160, 78, .35); transition: stroke .2s; }
+.cat:hover { color: var(--gold-light); }
+.cat:hover .arch-frame img { filter: none; }
+.cat[aria-pressed="true"] { color: var(--gold-light); }
+.cat[aria-pressed="true"] .arch-line path { stroke: var(--gold-light); stroke-width: 2; }
+.cat[aria-pressed="true"] .arch-frame img { filter: none; }
+.cat.all .arch-frame { display: grid; place-items: center; }
+.cat.all .ph { background: radial-gradient(circle at 50% 40%, #1d5a47, var(--night)); display: grid; place-items: center; }
+.cat.all .ph span { color: var(--gold-light); font-size: 24px; font-weight: 700; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 46px 30px; }
+.piece { display: flex; flex-direction: column; }
+.piece .open { border: 0; padding: 0; background: none; cursor: zoom-in; }
+.piece .arch-frame img { transition: transform .7s cubic-bezier(.2, .7, .2, 1); }
+.piece .open:hover .arch-frame img { transform: scale(1.04); }
+.piece h3 { margin: 18px 0 0; font-size: 24px; font-weight: 500; color: #F6EFDF; line-height: 1.4; }
+.meta { display: flex; gap: 16px; color: var(--muted-on-lapis); font-size: 18px; margin-top: 2px; }
+.meta span + span { padding-inline-start: 16px; border-inline-start: 1px solid rgba(168, 187, 174, .3); }
+.ask { margin-top: 8px; font-size: 18px; color: var(--gold-light); text-decoration: none; align-self: flex-start; border-bottom: 1px solid rgba(235, 208, 142, .35); }
+.ask:hover { border-color: var(--gold-light); }
+.empty-note { color: var(--muted-on-lapis); text-align: center; padding: 30px 0; }
+
+/* ---------- Second-hand ledger ---------- */
+.used {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, .45), transparent 60%),
+    var(--parchment);
+  color: var(--ink); padding: 100px 0 116px; position: relative;
+}
+.used::before { /* torn manuscript edge */
+  content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 18px;
+  background: var(--lapis);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0h120v6c-6 0-8 8-15 8s-9-8-15-8-8 8-15 8-9-8-15-8-8 8-15 8-9-8-15-8-8 8-15 8S6 6 0 6z'/%3E%3C/svg%3E") 0 0 / 120px 18px repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18' preserveAspectRatio='none'%3E%3Cpath d='M0 0h120v6c-6 0-8 8-15 8s-9-8-15-8-8 8-15 8-9-8-15-8-8 8-15 8-9-8-15-8-8 8-15 8S6 6 0 6z'/%3E%3C/svg%3E") 0 0 / 120px 18px repeat-x;
+}
+.used .section-head p { color: #6B5541; }
+.used h2 { color: var(--ink); }
+.chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 38px; }
+.chip {
+  border: 1px solid rgba(58, 38, 23, .3); background: transparent; padding: 3px 18px; border-radius: 999px;
+  font-size: 18px; cursor: pointer; color: var(--ink); transition: background .2s, color .2s;
+}
+.chip:hover { background: rgba(58, 38, 23, .07); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+.tags { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 30px; }
+.tag-item { position: relative; }
+.tag-item .open { display: block; width: 100%; border: 0; padding: 0; background: none; cursor: zoom-in; text-align: inherit; color: inherit; }
+.tag-item img { aspect-ratio: 1; object-fit: cover; width: 100%; border-radius: 3px; box-shadow: 0 1px 0 rgba(58,38,23,.15), 0 12px 30px -18px rgba(58, 38, 23, .6); }
+.tag {
+  position: relative; margin: -26px 18px 0 auto; width: 78%; padding: 14px 18px 12px 18px;
+  background: #FBF6EA; color: var(--ink);
+  padding-left: 34px; /* room for the punched hole on the left edge */
+  box-shadow: 0 8px 18px -12px rgba(58, 38, 23, .7);
+  border-right: 4px solid var(--gold);
+  transform: rotate(-1.2deg);
+}
+.tag::before { /* punched hole */
+  content: ''; position: absolute; left: 13px; top: 50%; width: 9px; height: 9px; margin-top: -4.5px;
+  border-radius: 50%; background: var(--parchment); box-shadow: inset 0 1px 2px rgba(0,0,0,.35);
+}
+.tag h3 { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.4; }
+.tag dl { margin: 2px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 0 10px; font-size: 17px; line-height: 1.55; }
+.tag dt { color: #8A7058; }
+.tag dd { margin: 0; }
+.tag-item.sold img { filter: grayscale(.7) contrast(.9); opacity: .75; }
+.stamp {
+  position: absolute; top: 18px; inset-inline-end: 14px; transform: rotate(-12deg);
+  border: 2px solid var(--sold); color: var(--sold); padding: 0 12px; font-weight: 700; font-size: 20px;
+  border-radius: 6px; background: rgba(251, 246, 234, .82); letter-spacing: 0;
+}
+
+/* ---------- Footer (address + contact) ---------- */
+footer { background: var(--night); color: var(--text-on-lapis); position: relative; overflow: hidden; border-top: 1px solid rgba(201, 160, 78, .25); }
+footer::before { content: ''; position: absolute; inset: 0; background: var(--girih) center / 84px 84px; opacity: .06; pointer-events: none; }
+.foot { position: relative; display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 48px; padding-top: 70px; padding-bottom: 54px; align-items: start; }
+.foot-logo { height: 64px; }
+.foot-since { margin: 4px 0 12px; color: var(--gold-light); font-size: 19px; }
+.foot-story p { margin: 0 0 8px; max-width: 30em; color: var(--muted-on-lapis); font-size: 18px; line-height: 1.8; }
+.info { margin: 0; display: grid; gap: 14px; }
+.info div { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+.info svg { width: 22px; height: 22px; color: var(--gold); margin-top: 6px; }
+.info dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.info dd { margin: 0; }
+.info a { text-decoration: none; border-bottom: 1px solid rgba(235, 208, 142, .3); }
+.info a:hover { border-color: var(--gold-light); color: var(--gold-light); }
+.foot-actions { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+.foot-actions .btn { justify-content: center; }
+.foot-bottom { position: relative; border-top: 1px solid rgba(201, 160, 78, .15); padding-top: 16px; padding-bottom: 20px; color: var(--muted-on-lapis); font-size: 16px; }
+
+/* ---------- Lightbox ---------- */
+dialog.lightbox {
+  border: 0; padding: 0; max-width: min(980px, 94vw); width: 100%; background: var(--night); color: var(--text-on-lapis);
+  border-radius: 18px; box-shadow: 0 40px 120px rgba(0, 0, 0, .6); overflow: hidden;
+}
+dialog.lightbox::backdrop { background: rgba(3, 14, 10, .82); backdrop-filter: blur(6px); }
+dialog.lightbox[open] { animation: pop .35s cubic-bezier(.2, .8, .2, 1); }
+@keyframes pop { from { opacity: 0; transform: translateY(16px) scale(.98); } }
+.lb { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 420px; }
+.lb img { width: 100%; height: 100%; max-height: 82vh; object-fit: cover; background: #000; }
+.lb-body { padding: 36px 32px; display: flex; flex-direction: column; gap: 6px; }
+.lb-body h3 { margin: 0; font-size: 34px; line-height: 1.3; color: #F6EFDF; }
+.lb-body .kind { color: var(--firouzeh); font-size: 18px; }
+.lb-body dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 14px 0 0; }
+.lb-body dt { color: var(--muted-on-lapis); }
+.lb-body dd { margin: 0; }
+.lb-body .note { color: var(--muted-on-lapis); font-size: 18px; margin-top: 12px; }
+.lb-body .actions { justify-content: flex-start; margin-top: auto; padding-top: 24px; }
+.lb-nav { display: flex; gap: 8px; margin-top: 18px; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(235, 208, 142, .4); background: transparent; color: var(--gold-light); cursor: pointer; display: grid; place-items: center; }
+.icon-btn:hover { background: rgba(235, 208, 142, .12); }
+.icon-btn svg { width: 22px; height: 22px; }
+.lb-close { position: absolute; top: 14px; inset-inline-end: 14px; background: rgba(10, 35, 27, .75); }
+
+/* ---------- Mobile action bar ---------- */
+.dock { display: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 26px; padding-top: 26px; min-height: 0; }
+  .hero-photo { width: min(72%, 320px); order: 2; }
+  .foot { grid-template-columns: 1fr; gap: 32px; }
+  .foot-actions { flex-direction: row; flex-wrap: wrap; }
+  .nav { display: none; }
+  .call { margin-inline-start: auto; }
+  .lb { grid-template-columns: 1fr; }
+  .lb img { max-height: 52vh; }
+}
+@media (max-width: 640px) {
+  body { font-size: 19px; padding-bottom: 68px; }
+  .wrap { padding: 0 18px; }
+  .toranj-panel { aspect-ratio: 1.25; margin: 0 -8px; }
+  .calli-svg { width: min(78vw, 300px); }
+  .brand-svg { height: 32px; }
+  .vitrine, .used { padding: 70px 0 80px; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 34px 16px; }
+  .piece h3 { font-size: 20px; }
+  .meta { font-size: 16px; gap: 10px; flex-wrap: wrap; }
+  .meta span + span { padding-inline-start: 10px; }
+  .tags { grid-template-columns: repeat(2, 1fr); gap: 30px 14px; }
+  .tag { width: 92%; margin-inline: auto 4%; padding: 10px 12px; }
+  .tag { padding-left: 24px; }
+  .tag h3 { font-size: 18px; }
+  .tag dl { font-size: 15px; }
+  .tag::before { left: 8px; }
+  .call { display: none; }
+  .lb-body { padding: 24px 20px; }
+  .dock {
+    display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; bottom: 0; left: 0; right: 0; z-index: 30;
+    background: rgba(6, 26, 19, .96); border-top: 1px solid rgba(201, 160, 78, .3); padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+  }
+  .dock a { display: flex; flex-direction: column; align-items: center; gap: 0; text-decoration: none; font-size: 15px; color: var(--gold-light); padding: 4px 0; }
+  .dock svg { width: 22px; height: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .draw { stroke-dashoffset: 0; }
+  .js .calligraphy h1, .js .since, .js .bead { opacity: 1; }
+  .js .hero-photo img { clip-path: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* =====================================================================
+   Light theme — colours taken from the store logo (cream, walnut brown, gold)
+   ===================================================================== */
+:root {
+  --night: #F4ECDC; --lapis: #FBF6EC; --cream-deep: #EADDC3;
+  --text-on-lapis: #4A2E1C; --muted-on-lapis: #7A6048;
+  --gold: #A97B2C; --gold-light: #C9A04E; --gold-deep: #7A5418;
+  --ink: #4A2E1C; --walnut: #3A2416;
+}
+body { background: var(--night); color: var(--ink); }
+.gold-text, .section-head h2 {
+  background: linear-gradient(100deg, #7A5418 0%, #B8862F 35%, #D9B464 50%, #B8862F 65%, #7A5418 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; padding: .08em 0;
+}
+.site-header { background: rgba(244, 236, 220, .9); border-bottom-color: rgba(122, 84, 24, .18); }
+.site-header .wrap { height: 82px; }
+.brand img { height: 60px; width: 60px; box-shadow: 0 2px 10px rgba(74, 46, 28, .22); }
+.nav a { color: #6B5039; }
+.nav a:hover { color: var(--gold-deep); }
+.call { color: var(--gold-deep); border-color: var(--gold); }
+.call:hover { background: var(--gold); color: #FFF8EA; }
+
+.hero {
+  background:
+    radial-gradient(ellipse 55% 65% at 68% 45%, rgba(255, 252, 244, .95), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23A97B2C' stroke-opacity='.16' stroke-width='.8'%3E%3Cpath d='M42 12l8.5 21.5L72 42l-21.5 8.5L42 72l-8.5-21.5L12 42l21.5-8.5z'/%3E%3Cpath d='M42 21l12 9 9 12-9 12-12 9-12-9-9-12 9-12z'/%3E%3Cpath d='M0 0l12 12M84 0L72 12M0 84l12-12M84 84L72 72'/%3E%3C/g%3E%3C/svg%3E") center / 84px 84px,
+    linear-gradient(180deg, #F7F0E2, var(--cream-deep));
+  background-blend-mode: normal;
+}
+.hero::after { background: radial-gradient(ellipse at 60% 40%, transparent 35%, var(--cream-deep) 96%); opacity: .65; }
+.toranj .fill { fill: rgba(255, 251, 243, .8); }
+.toranj .inner { opacity: .45; }
+.since { color: var(--gold-deep); opacity: 1; }
+.calli-svg { filter: drop-shadow(0 2px 4px rgba(122, 84, 24, .22)); }
+.btn-gold { background: linear-gradient(135deg, #C9A04E, #A97B2C 55%, #7A5418); color: #FFF8EA; }
+.btn-gold:hover { background: #A97B2C; }
+.btn-line { border-color: rgba(122, 84, 24, .45); color: var(--gold-deep); }
+.btn-line:hover { background: rgba(169, 123, 44, .08); }
+
+.vitrine { background: var(--lapis); }
+.section-head p { color: var(--muted-on-lapis); }
+.cat { color: var(--muted-on-lapis); }
+.cat:hover, .cat[aria-pressed="true"] { color: var(--gold-deep); }
+.cat .arch-line path { stroke: rgba(169, 123, 44, .35); }
+.cat[aria-pressed="true"] .arch-line path { stroke: var(--gold); }
+.cat.all .ph { background: radial-gradient(circle at 50% 40%, #FFFBF3, var(--cream-deep)); }
+.cat.all .ph span { color: var(--gold-deep); }
+.piece h3 { color: var(--ink); }
+.meta span + span { border-color: rgba(122, 84, 24, .25); }
+.ask { color: var(--gold-deep); border-bottom-color: rgba(122, 84, 24, .35); }
+.piece .arch-frame img { box-shadow: none; }
+
+/* second-hand: a walnut band like the logo frame, with cream hang-tags */
+.used { background: radial-gradient(ellipse at 20% 0%, rgba(201, 160, 78, .14), transparent 60%), var(--walnut); color: #F1E6CF; }
+.used::before { background: var(--lapis); }
+.used .section-head p { color: #D3C2A3; }
+.chip { border-color: rgba(241, 230, 207, .35); color: #F1E6CF; }
+.chip:hover { background: rgba(241, 230, 207, .08); }
+.chip[aria-pressed="true"] { background: var(--gold-light); color: var(--walnut); border-color: var(--gold-light); }
+.tag::before { background: var(--walnut); }
+
+footer { background: var(--cream-deep); color: var(--ink); border-top-color: rgba(122, 84, 24, .25); }
+footer::before { opacity: .1; }
+.brand-svg { fill: var(--gold-deep); }
+.foot-since { color: var(--gold-deep); }
+.info svg { color: var(--gold); }
+.info a { border-bottom-color: rgba(122, 84, 24, .3); }
+.info a:hover { color: var(--gold-deep); border-color: var(--gold-deep); }
+.foot-bottom { border-top-color: rgba(122, 84, 24, .2); color: var(--muted-on-lapis); }
+
+dialog.lightbox { background: var(--lapis); color: var(--ink); }
+dialog.lightbox::backdrop { background: rgba(40, 26, 16, .7); }
+.lb-body h3 { color: var(--ink); }
+.lb-body .kind { color: var(--gold-deep); }
+.icon-btn { border-color: rgba(122, 84, 24, .4); color: var(--gold-deep); }
+.icon-btn:hover { background: rgba(169, 123, 44, .1); }
+.lb-close { background: rgba(251, 246, 236, .9); }
+@media (max-width: 640px) {
+  .dock { background: rgba(244, 236, 220, .97); border-top-color: rgba(122, 84, 24, .25); }
+  .dock a { color: var(--gold-deep); }
+  .brand img { height: 48px; width: 48px; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+<a class="skip" href="#vitrine">رفتن به ویترین</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- «جواهری قسمتی» in the Gulzar Nastaliq typeface, converted to outlines so every dot renders on every device -->
+  <symbol id="calli" viewBox="30 -1664 3958 2045"><path d="M275 361Q194 361 144.5 324.5Q95 288 72.5 225.5Q50 163 50 85Q50 15 63.0 -62.5Q76 -140 98.0 -217.5Q120 -295 148 -364L180 -354Q146 -255 122.0 -168.5Q98 -82 98 8Q98 64 120.5 110.0Q143 156 187.5 182.5Q232 209 297 209Q351 209 397.0 191.0Q443 173 479.5 144.5Q516 116 541.5 84.0Q567 52 580.5 22.0Q594 -8 594 -27Q594 -47 586.0 -61.0Q578 -75 569 -79Q537 -71 513 -71Q458 -71 426.0 -107.5Q394 -144 394 -215Q394 -244 401.0 -272.0Q408 -300 419 -327Q444 -327 451 -308Q447 -296 447 -281Q447 -226 496 -226Q520 -226 554 -238Q581 -238 606.5 -200.0Q632 -162 632 -88Q632 -15 605.5 58.5Q579 132 537 196Q488 268 421.5 314.5Q355 361 275 361ZM564 -677Q557 -677 546 -680Q515 -690 497.0 -710.5Q479 -731 479 -752Q479 -769 488.0 -783.0Q497 -797 504 -806L540 -853H546Q554 -826 578.5 -810.0Q603 -794 628 -789L695 -879H701Q709 -853 731.0 -839.0Q753 -825 778 -820Q795 -816 795 -803Q795 -795 788 -785L739 -715Q730 -703 718 -703Q711 -703 700 -706Q676 -715 658.0 -728.5Q640 -742 631 -755L585 -689Q576 -677 564 -677ZM451 -308Q428 -310 419 -327Q440 -377 475.0 -424.0Q510 -471 550 -500Q572 -516 597.0 -526.0Q622 -536 644 -536Q665 -536 681 -525Q686 -515 689.0 -483.5Q692 -452 690 -423Q675 -431 659.0 -434.0Q643 -437 627 -437Q589 -437 553.0 -420.0Q517 -403 490.0 -374.0Q463 -345 451 -308ZM694 -420Q668 -420 647 -440Q652 -465 661.0 -485.5Q670 -506 681 -525Q691 -504 713 -504Q738 -504 769.5 -525.5Q801 -547 825 -575Q845 -597 861.0 -611.5Q877 -626 890 -626Q905 -650 932.0 -665.0Q959 -680 978 -682Q1007 -670 1028.0 -651.0Q1049 -632 1049 -606Q1049 -585 1038.0 -563.5Q1027 -542 1012.5 -524.0Q998 -506 987 -493Q935 -532 892 -532Q846 -532 806 -491Q773 -457 746.0 -438.5Q719 -420 694 -420ZM890 -626Q890 -679 911.5 -727.5Q933 -776 966.5 -813.5Q1000 -851 1036.5 -872.5Q1073 -894 1104 -894Q1126 -868 1156 -868Q1182 -868 1206.0 -889.5Q1230 -911 1240 -945H1259Q1266 -931 1274.0 -924.0Q1282 -917 1296 -917Q1314 -917 1333.0 -935.0Q1352 -953 1365 -989L1382 -992Q1378 -949 1365.0 -912.5Q1352 -876 1331.5 -853.5Q1311 -831 1281 -831Q1261 -831 1240 -842Q1221 -811 1192.5 -793.5Q1164 -776 1134 -776Q1116 -776 1096.5 -783.5Q1077 -791 1060 -806Q1029 -803 1005.0 -788.0Q981 -773 967.5 -753.0Q954 -733 954 -716Q954 -693 978 -682Q978 -670 964.5 -655.0Q951 -640 931.0 -631.0Q911 -622 890 -626ZM1406 -1442Q1399 -1442 1388 -1445Q1357 -1455 1339.0 -1475.5Q1321 -1496 1321 -1517Q1321 -1534 1330.0 -1548.0Q1339 -1562 1346 -1571L1382 -1618H1388Q1396 -1591 1420.5 -1575.0Q1445 -1559 1470 -1554L1537 -1644H1543Q1551 -1618 1573.0 -1604.0Q1595 -1590 1620 -1585Q1637 -1581 1637 -1568Q1637 -1560 1630 -1550L1581 -1480Q1572 -1468 1560 -1468Q1553 -1468 1542 -1471Q1518 -1480 1500.0 -1493.5Q1482 -1507 1473 -1520L1427 -1454Q1418 -1442 1406 -1442ZM1425 -880Q1406 -880 1384.0 -887.5Q1362 -895 1351 -908Q1352 -925 1360.5 -950.0Q1369 -975 1382 -992Q1391 -979 1406.0 -970.5Q1421 -962 1449 -962Q1477 -962 1500.5 -975.5Q1524 -989 1538.5 -1009.0Q1553 -1029 1553 -1046Q1553 -1067 1533 -1079Q1521 -1071 1507.0 -1067.5Q1493 -1064 1480 -1064Q1453 -1064 1430.5 -1081.5Q1408 -1099 1408 -1142L1462 -1295Q1468 -1300 1480.5 -1306.0Q1493 -1312 1509 -1312Q1542 -1312 1562.0 -1288.0Q1582 -1264 1591.0 -1229.0Q1600 -1194 1600 -1160Q1600 -1125 1593.5 -1086.5Q1587 -1048 1576.0 -1014.0Q1565 -980 1551 -958Q1530 -923 1498.0 -901.5Q1466 -880 1425 -880ZM2045 361Q1963 361 1913.5 324.5Q1864 288 1842.0 224.5Q1820 161 1820 82Q1820 16 1832.5 -59.0Q1845 -134 1867.5 -212.0Q1890 -290 1918 -364L1950 -354Q1913 -252 1890.0 -159.5Q1867 -67 1868 14Q1869 70 1893.0 114.5Q1917 159 1961.0 184.0Q2005 209 2067 209Q2125 209 2172.0 190.0Q2219 171 2254.5 141.0Q2290 111 2314.5 78.0Q2339 45 2351.5 17.0Q2364 -11 2364 -26Q2364 -47 2356.0 -61.0Q2348 -75 2339 -79Q2325 -75 2308.0 -73.0Q2291 -71 2280 -71Q2221 -71 2192.5 -111.5Q2164 -152 2164 -217Q2164 -263 2178.5 -318.0Q2193 -373 2218.5 -428.0Q2244 -483 2278.0 -529.0Q2312 -575 2351.0 -602.5Q2390 -630 2431 -630Q2448 -630 2455.0 -622.5Q2462 -615 2462 -606Q2462 -598 2459.5 -588.5Q2457 -579 2452 -567L2414 -465H2404Q2387 -483 2380 -483Q2351 -483 2322.0 -465.5Q2293 -448 2268.5 -419.0Q2244 -390 2229.0 -355.5Q2214 -321 2214 -288Q2214 -263 2225.5 -244.5Q2237 -226 2266 -226Q2277 -226 2292.5 -229.0Q2308 -232 2324 -238Q2354 -238 2378.0 -197.0Q2402 -156 2402 -88Q2402 -16 2376.5 57.5Q2351 131 2307 195Q2258 267 2191.0 314.0Q2124 361 2045 361ZM2400 205 2397 189Q2447 163 2495.0 121.5Q2543 80 2581 32Q2646 -51 2692.5 -129.5Q2739 -208 2786 -267Q2817 -306 2859.0 -336.5Q2901 -367 2953 -367Q2979 -367 3006 -358Q2985 -293 2942 -260Q2907 -262 2878.0 -248.0Q2849 -234 2827.5 -214.5Q2806 -195 2792 -180Q2758 -143 2729.5 -96.0Q2701 -49 2666.5 3.5Q2632 56 2578 110Q2564 124 2536.5 145.5Q2509 167 2473.5 184.5Q2438 202 2400 205ZM2824 -213 2875 -345Q2901 -360 2924.5 -366.0Q2948 -372 2969 -372Q2985 -372 2999.0 -369.0Q3013 -366 3024 -363L3049 -425Q3053 -426 3056.5 -426.5Q3060 -427 3064 -427Q3086 -427 3094.0 -410.0Q3102 -393 3102 -371Q3102 -338 3081.5 -307.0Q3061 -276 3031.0 -256.5Q3001 -237 2973 -237Q2969 -237 2954.5 -243.0Q2940 -249 2916 -249Q2897 -249 2874.0 -241.5Q2851 -234 2824 -213ZM2965 112Q2925 112 2905.5 86.0Q2886 60 2886 26Q2886 -11 2904.0 -44.5Q2922 -78 2951.0 -108.0Q2980 -138 3012 -162L3030 -149Q2996 -122 2968.5 -85.5Q2941 -49 2941 -19Q2941 7 2965 21Q2977 -1 2999 -1Q3016 -1 3026.0 11.0Q3036 23 3036 43Q3036 67 3017.5 89.5Q2999 112 2965 112ZM3222 -81V-455Q3222 -489 3224.0 -512.5Q3226 -536 3231.0 -557.0Q3236 -578 3246.5 -603.0Q3257 -628 3275 -664L3291 -659L3286 -325Q3285 -255 3273.0 -194.5Q3261 -134 3241 -81ZM3349 15 3341 -11 3437 -67Q3504 -106 3541 -136Q3554 -147 3562.0 -159.0Q3570 -171 3570 -179Q3570 -190 3564.5 -197.0Q3559 -204 3555 -204Q3551 -200 3535.0 -189.5Q3519 -179 3489 -179Q3464 -179 3440.5 -195.0Q3417 -211 3417 -257L3471 -410Q3482 -419 3495.0 -423.0Q3508 -427 3518 -427Q3559 -427 3584.0 -384.5Q3609 -342 3609 -271Q3609 -226 3596.5 -181.5Q3584 -137 3565.5 -100.0Q3547 -63 3529 -39Q3514 -19 3502.5 -13.5Q3491 -8 3468 -4ZM3778 140Q3774 140 3769.5 139.5Q3765 139 3760 138Q3720 127 3700.5 104.5Q3681 82 3681 61Q3681 43 3690.5 28.5Q3700 14 3707 5L3744 -43H3749Q3764 -17 3785.0 -1.0Q3806 15 3839 22Q3857 25 3857 37Q3857 44 3849 55L3799 128Q3794 135 3789.5 137.5Q3785 140 3778 140ZM3579 -211V-306Q3609 -306 3649.0 -322.5Q3689 -339 3730.5 -372.0Q3772 -405 3806 -454Q3785 -465 3764.0 -480.0Q3743 -495 3720.0 -506.5Q3697 -518 3672 -518Q3652 -518 3637.5 -508.5Q3623 -499 3594 -466L3571 -483Q3600 -536 3623.5 -562.0Q3647 -588 3667.5 -596.5Q3688 -605 3710 -605Q3736 -605 3759.0 -593.5Q3782 -582 3804.0 -567.0Q3826 -552 3848.5 -540.5Q3871 -529 3894 -529Q3920 -529 3950 -549L3968 -529L3927 -482Q3907 -459 3888.0 -450.5Q3869 -442 3847 -442H3846Q3808 -368 3762.0 -316.5Q3716 -265 3668.5 -238.0Q3621 -211 3579 -211Z"/></symbol>
+  <linearGradient id="goldText" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8C6420"/><stop offset=".3" stop-color="#C9A04E"/><stop offset=".45" stop-color="#D4AE5C"/><stop offset=".5" stop-color="#E9C977"/><stop offset=".55" stop-color="#D4AE5C"/><stop offset=".7" stop-color="#C9A04E"/><stop offset="1" stop-color="#8C6420"/><animateTransform data-shimmer attributeName="gradientTransform" type="translate" from="-1 0" to="0 0" dur="2.4s" begin="indefinite" fill="freeze"/></linearGradient>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4-2 1.3a11 11 0 0 0 7.4 7.4l1.3-2 4 1.6V19a1.6 1.6 0 0 1-1.7 1.6A16.5 16.5 0 0 1 3.4 5.2 1.6 1.6 0 0 1 5 3.5z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-6.5-6-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" data-brand></a>
+    <nav class="nav" aria-label="بخش‌های سایت">
+      <a href="#vitrine">ویترین</a>
+      <a href="#used">طلای دست دوم</a>
+      <a href="#contact">تماس و نشانی</a>
+    </nav>
+    <a class="call" data-tel><span data-phone></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="معرفی">
+    <div class="wrap">
+      <div>
+        <div class="toranj-panel">
+          <svg class="toranj" data-toranj viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="calligraphy">
+            <h1><span class="sr" data-name></span><svg class="calli-svg" aria-hidden="true"><use href="#calli" fill="url(#goldText)"/></svg></h1>
+            <p class="since">تأسیس <span data-since></span></p>
+          </div>
+        </div>
+        <div class="hero-text">
+          <div class="actions">
+            <a class="btn btn-gold" href="#vitrine">دیدن ویترین</a>
+            <a class="btn btn-line" data-insta target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-insta"/></svg> اینستاگرام
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="arch-frame">
+          <img data-hero alt="نمایی از جواهرات جواهری قسمتی" fetchpriority="high">
+          <svg class="arch-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100V38C0 18 28 9 50 0 72 9 100 18 100 38V100Z"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vitrine" id="vitrine" aria-labelledby="vitrine-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="vitrine-title">ویترین</h2>
+        <p>قیمت هر قطعه با نرخ روز طلا حساب می‌شود. برای قیمت امروز در اینستاگرام پیام بدهید یا تماس بگیرید.</p>
+      </div>
+      <div class="cats" role="group" aria-label="دسته‌بندی‌ها" data-cats></div>
+      <div class="grid" data-grid></div>
+    </div>
+  </section>
+
+  <section class="used" id="used" aria-labelledby="used-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="used-title">طلای دست دوم</h2>
+        <p>از هر کدام فقط یکی هست و ممکن است زود فروخته شود. پیش از آمدن، موجود بودنش را بپرسید.</p>
+      </div>
+      <div class="chips" role="group" aria-label="نوع قطعه" data-chips></div>
+      <div class="tags" data-tags></div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <svg class="brand-svg foot-logo" role="img" aria-label="جواهری قسمتی"><use href="#calli"/></svg>
+      <p class="foot-since">تأسیس <span data-since></span></p>
+      <div data-story class="foot-story"></div>
+    </div>
+    <dl class="info">
+      <div><svg aria-hidden="true"><use href="#i-pin"/></svg><dt>نشانی</dt><dd data-address></dd></div>
+      <div><svg aria-hidden="true"><use href="#i-clock"/></svg><dt>ساعت کاری</dt><dd data-hours></dd></div>
+      <div><svg aria-hidden="true"><use href="#i-phone"/></svg><dt>تلفن</dt><dd><a data-tel><span data-phone></span></a></dd></div>
+      <div><svg aria-hidden="true"><use href="#i-insta"/></svg><dt>اینستاگرام</dt><dd><a data-insta target="_blank" rel="noopener" dir="ltr" data-insta-handle></a></dd></div>
+    </dl>
+    <div class="foot-actions">
+      <a class="btn btn-gold" data-map target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg> مسیریابی روی نقشه</a>
+      <a class="btn btn-line" data-tel><svg aria-hidden="true"><use href="#i-phone"/></svg> تماس</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom"><span data-name></span></div>
+</footer>
+
+<nav class="dock" aria-label="تماس سریع">
+  <a data-tel><svg aria-hidden="true"><use href="#i-phone"/></svg>تماس</a>
+  <a data-insta target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg>اینستاگرام</a>
+  <a data-map target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>مسیر</a>
+</nav>
+
+<dialog class="lightbox" data-lightbox aria-labelledby="lb-title">
+  <div class="lb">
+    <img data-lb-img alt="">
+    <div class="lb-body">
+      <span class="kind" data-lb-kind></span>
+      <h3 id="lb-title" data-lb-title></h3>
+      <dl data-lb-meta></dl>
+      <p class="note" data-lb-note></p>
+      <div class="actions">
+        <a class="btn btn-gold" data-lb-ask target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-insta"/></svg> پرسیدن قیمت</a>
+        <a class="btn btn-line" data-tel><svg aria-hidden="true"><use href="#i-phone"/></svg> تماس</a>
+      </div>
+      <div class="lb-nav">
+        <button class="icon-btn" data-lb-prev aria-label="قبلی"><svg aria-hidden="true"><use href="#i-prev"/></svg></button>
+        <button class="icon-btn" data-lb-next aria-label="بعدی"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <button class="icon-btn lb-close" data-lb-close aria-label="بستن"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+</dialog>
+
+<script src="data.js"></script>
+<script>window.SITE.logo = window.SITE.logo || 'images/logo.png';</script>
+<script>
+(() => {
+  const S = window.SITE, CATS = window.CATEGORIES || [], PRODUCTS = window.PRODUCTS || [], USED = window.USED || [];
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const igUrl = `https://instagram.com/${S.instagram}`;
+  const dmUrl = `https://ig.me/m/${S.instagram}`;
+  const archLine = '<svg class="arch-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100V38C0 18 28 9 50 0 72 9 100 18 100 38V100Z"/></svg>';
+
+  // ----- Fill shared store details -----
+  $$('[data-name]').forEach(e => e.textContent = S.name);
+  $$('[data-since]').forEach(e => e.textContent = S.since);
+  $$('[data-tagline]').forEach(e => e.textContent = S.tagline);
+  $$('[data-address]').forEach(e => e.textContent = S.address);
+  $$('[data-hours]').forEach(e => e.textContent = S.hours);
+  $$('[data-phone]').forEach(e => e.textContent = S.phoneDisplay);
+  $$('[data-tel]').forEach(e => e.href = `tel:${S.phoneLink}`);
+  $$('[data-insta]').forEach(e => e.href = igUrl);
+  $$('[data-insta-handle]').forEach(e => e.textContent = '@' + S.instagram);
+  $$('[data-map]').forEach(e => e.href = S.mapUrl);
+  $('[data-hero]').src = S.heroImage;
+  $('[data-story]').innerHTML = (S.story || []).map(p => `<p>${esc(p)}</p>`).join('');
+  $('[data-brand]').innerHTML = S.logo
+    ? `<img src="${esc(S.logo)}" alt="${esc(S.name)}">`
+    : `<svg class="brand-svg" aria-hidden="true"><use href="#calli"/></svg>`;
+  $('[data-brand]').setAttribute('aria-label', S.name);
+
+  // ----- Toranj (illuminated medallion) drawn around the calligraphy -----
+  (function toranj() {
+    const svg = $('[data-toranj]'), W = 1000, H = 640, cx = W / 2, cy = H / 2;
+    const lobed = (rx, ry, n, bulge) => {
+      const pts = Array.from({ length: n }, (_, i) => {
+        const a = (i / n) * Math.PI * 2;
+        return [cx + Math.cos(a) * rx, cy + Math.sin(a) * ry];
+      });
+      let d = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+      for (let i = 1; i <= n; i++) {
+        const [x0, y0] = pts[i - 1], [x1, y1] = pts[i % n];
+        const mx = (x0 + x1) / 2, my = (y0 + y1) / 2;
+        const ox = (mx - cx) / rx, oy = (my - cy) / ry, len = Math.hypot(ox, oy) || 1;
+        const qx = mx + (ox / len) * bulge * (rx / 100), qy = my + (oy / len) * bulge * (ry / 100);
+        d += ` Q ${qx.toFixed(1)} ${qy.toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+      }
+      return d + ' Z';
+    };
+    // pendants (sar-toranj) at both ends
+    const pendant = (dir) => {
+      const x = cx + dir * 455;
+      return `M ${x} ${cy - 46} Q ${x + dir * 30} ${cy - 40} ${x + dir * 40} ${cy} Q ${x + dir * 30} ${cy + 40} ${x} ${cy + 46}`;
+    };
+    const finial = (dir) => {
+      const x = cx + dir * 495;
+      return `M ${x - dir * 2} ${cy} q ${dir * 18} -10 ${dir * 30} 0 q ${-dir * 12} 10 ${-dir * 30} 0`;
+    };
+    const beads = [];
+    for (let i = 0; i < 28; i++) {
+      const a = (i / 28) * Math.PI * 2;
+      beads.push(`<circle class="bead" cx="${(cx + Math.cos(a) * 432).toFixed(1)}" cy="${(cy + Math.sin(a) * 272).toFixed(1)}" r="2.6"/>`);
+    }
+    svg.innerHTML = `
+      <path class="fill" d="${lobed(420, 262, 28, 9)}"/>
+      <path class="outer draw" pathLength="1" d="${lobed(420, 262, 28, 9)}"/>
+      <path class="inner draw late" pathLength="1" d="${lobed(392, 238, 20, 6)}"/>
+      <path class="outer draw late" pathLength="1" d="${pendant(1)}"/>
+      <path class="outer draw late" pathLength="1" d="${pendant(-1)}"/>
+      <path class="inner draw late" pathLength="1" d="${finial(1)}"/>
+      <path class="inner draw late" pathLength="1" d="${finial(-1)}"/>
+      ${beads.join('')}`;
+  })();
+
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const sh = document.querySelector('[data-shimmer]');
+    setTimeout(() => sh && sh.beginElement(), 1700);
+  }
+
+  // ----- Vitrine -----
+  let filter = 'all';
+  const catName = id => (CATS.find(c => c.id === id) || {}).name || '';
+  const catsEl = $('[data-cats]');
+  catsEl.innerHTML =
+    `<button class="cat all" data-cat="all" aria-pressed="true"><div class="arch-frame"><div class="ph"><span>همه</span></div>${archLine}</div>همه</button>` +
+    CATS.map(c => `<button class="cat" data-cat="${esc(c.id)}" aria-pressed="false">
+        <div class="arch-frame"><img src="${esc(c.image)}" alt="" loading="lazy">${archLine}</div>${esc(c.name)}</button>`).join('');
+  catsEl.addEventListener('click', e => {
+    const b = e.target.closest('[data-cat]'); if (!b) return;
+    filter = b.dataset.cat;
+    $$('[data-cat]', catsEl).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    renderGrid();
+  });
+
+  let currentList = [], currentIndex = 0;
+  const metaHtml = p => {
+    const bits = [];
+    if (p.karat) bits.push(`<span>${esc(p.karat)} عیار</span>`);
+    if (p.weight) bits.push(`<span>${esc(p.weight)} گرم</span>`);
+    if (p.note) bits.push(`<span>${esc(p.note)}</span>`);
+    return bits.join('');
+  };
+  function renderGrid() {
+    const list = PRODUCTS.filter(p => filter === 'all' || p.category === filter);
+    $('[data-grid]').innerHTML = list.length ? list.map((p, i) => `
+      <article class="piece">
+        <button class="open" data-open="p" data-i="${i}" aria-label="بزرگ‌نمایی ${esc(p.name)}">
+          <div class="arch-frame"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">${archLine}</div>
+        </button>
+        <h3>${esc(p.name)}</h3>
+        <div class="meta">${metaHtml(p)}</div>
+        <a class="ask" href="${dmUrl}" target="_blank" rel="noopener">پرسیدن قیمت</a>
+      </article>`).join('')
+      : `<p class="empty-note">فعلاً قطعه‌ای در این دسته در ویترین سایت نیست. در اینستاگرام بپرسید.</p>`;
+    gridList = list;
+  }
+  let gridList = [];
+  renderGrid();
+
+  // ----- Second-hand -----
+  let usedFilter = 'all';
+  const types = [...new Set(USED.map(u => u.type).filter(Boolean))];
+  const chips = $('[data-chips]');
+  chips.innerHTML = `<button class="chip" data-type="all" aria-pressed="true">همه</button>` +
+    types.map(t => `<button class="chip" data-type="${esc(t)}" aria-pressed="false">${esc(t)}</button>`).join('');
+  chips.addEventListener('click', e => {
+    const b = e.target.closest('[data-type]'); if (!b) return;
+    usedFilter = b.dataset.type;
+    $$('[data-type]', chips).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    renderUsed();
+  });
+  let usedList = [];
+  function renderUsed() {
+    usedList = USED.filter(u => usedFilter === 'all' || u.type === usedFilter);
+    $('[data-tags]').innerHTML = usedList.map((u, i) => `
+      <article class="tag-item${u.sold ? ' sold' : ''}">
+        <button class="open" data-open="u" data-i="${i}" aria-label="بزرگ‌نمایی ${esc(u.name)}">
+          <img src="${esc(u.image)}" alt="${esc(u.name)}" loading="lazy">
+        </button>
+        ${u.sold ? '<span class="stamp">فروخته شد</span>' : ''}
+        <div class="tag">
+          <h3>${esc(u.name)}</h3>
+          <dl>
+            ${u.weight ? `<dt>وزن</dt><dd>${esc(u.weight)} گرم</dd>` : ''}
+            ${u.karat ? `<dt>عیار</dt><dd>${esc(u.karat)}</dd>` : ''}
+            ${u.condition ? `<dt>وضعیت</dt><dd>${esc(u.condition)}</dd>` : ''}
+          </dl>
+        </div>
+      </article>`).join('');
+  }
+  renderUsed();
+
+  // ----- Lightbox -----
+  const dlg = $('[data-lightbox]');
+  function show(list, i, kind) {
+    currentList = list.map(x => ({ ...x, kind })); currentIndex = i;
+    const p = currentList[i];
+    $('[data-lb-img]').src = p.image; $('[data-lb-img]').alt = p.name;
+    $('[data-lb-title]').textContent = p.name;
+    $('[data-lb-kind]').textContent = kind === 'u' ? `دست دوم${p.type ? '، ' + p.type : ''}` : catName(p.category);
+    const rows = [];
+    if (p.karat) rows.push(['عیار', p.karat]);
+    if (p.weight) rows.push(['وزن', p.weight + ' گرم']);
+    if (p.condition) rows.push(['وضعیت', p.condition]);
+    if (p.note) rows.push(['توضیح', p.note]);
+    $('[data-lb-meta]').innerHTML = rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+    $('[data-lb-note]').textContent = p.sold ? 'این قطعه فروخته شده است. برای قطعه‌های مشابه پیام بدهید.' : 'قیمت با نرخ روز طلا حساب می‌شود.';
+    $('[data-lb-ask]').href = dmUrl;
+    $('[data-lb-ask]').lastChild.textContent = p.sold ? ' پرسیدن قطعه مشابه' : ' پرسیدن قیمت';
+    const many = currentList.length > 1;
+    $('[data-lb-prev]').hidden = $('[data-lb-next]').hidden = !many;
+    if (!dlg.open) dlg.showModal();
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-open]'); if (!b) return;
+    const i = +b.dataset.i;
+    b.dataset.open === 'u' ? show(usedList, i, 'u') : show(gridList, i, 'p');
+  });
+  const step = d => { if (!currentList.length) return; const n = (currentIndex + d + currentList.length) % currentList.length; show(currentList, n, currentList[n].kind); };
+  $('[data-lb-next]').addEventListener('click', () => step(1));   // RTL: "next" points left
+  $('[data-lb-prev]').addEventListener('click', () => step(-1));
+  $('[data-lb-close]').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') step(1);
+    if (e.key === 'ArrowRight') step(-1);
+  });
+})();
+</script>
+</body>
+</html>
